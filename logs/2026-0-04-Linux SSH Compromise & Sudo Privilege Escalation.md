@@ -52,6 +52,30 @@ To verify if the backdoor is still active, you would run:
 
 3.**Lock the account web_developer and audit `/etc/sudoers` to remove their high-level permissions**.
 
+## Output Of the command `ss -tulnp | grep ":8888"`
+
+If  the backdoor is active, the terminal will print an output line that looks like this:
+
+`tcp   LISTEN 0      10         0.0.0.0:8888       0.0.0.0:* users:(("nc.traditional",pid=18415,fd=3))`
+
+1. **tcp** (The Protocol)
+This confirms the port is using the TCP (Transmission Control Protocol) standard, which is connection-oriented and perfect for interactive hacker shell sessions.
+
+2. **LISTEN** (The State)
+This is the red alert! It means the port is actively open and "listening," waiting for someone from the outside world to connect to it.
+
+3. **0.0.0.0:8888** (The Local Address & Port)
+0.0.0.0 means the program is listening on every network interface card on the machine (local network, internet, loopback). :8888 is the port number we searched for.
+
+4. **0.0.0.0:*** (The Peer Address)
+This means anyone (*) from any IP address in the world is allowed to connect to this listening port.
+
+5. **users:(("nc.traditional",pid=18415,fd=3))** (The Program & PID)
+*This is the most important forensic clue:*
+
+**nc.traditional**: This is the exact name of the program holding the port open. It tells you Netcat is the culprit!
+
+**pid=18415**: This is the unique Process ID assigned by the Linux kernel.
 
 
 
