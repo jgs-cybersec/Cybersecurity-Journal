@@ -1,3 +1,5 @@
+# SQL injection webpage vulnerability
+
 ## The Scenario
 
 At 11:15 AM, the Web Application Firewall (WAF) triggers a high-severity alert on your primary public-facing portal:
@@ -65,6 +67,35 @@ If there were other hackers or legitimate users visiting that page, you might se
 `192.168.1.12      <-- A local IT admin testing the site
 203.0.113.110     <-- The attacker
 220.14.32.99      <-- Another external user`
+
+## How to Block the Attacker's IP?
+
+Must block it immediately to prevent them from executing more SQL injection commands. On a Linux server, you do this using the built-in firewall.
+
+**Method A: Using UFW (Uncomplicated Firewall - Easiest)**
+
+UFW is the standard user-friendly firewall on Ubuntu systems.
+
+`sudo ufw deny from 203.0.113.110`
+
+It immediately drops any connection attempt coming from 203.0.113.110 at the front door. The attacker's browser or terminal will simply timeout, unable to load your website anymore.
+
+## Method B: Using iptables (The Classic Linux Firewall)
+
+If the server is a standard Linux server using raw `iptables`
+
+`sudo iptables -A INPUT -s 203.0.113.110 -j DROP`
+
+`sudo`: Runs the command with root (administrator) privileges.
+
+`iptables`: Invokes the firewall application.
+
+`-A INPUT`: Appends a rule to the INPUT chain (meaning any incoming traffic trying to get into our server).
+
+`-s 203.0.113.110`: Sets the source of the traffic we want to target.
+
+`-j DROP`: The jump target. This tells the firewall: "Instantly drop this packet and don't even send a response back." (It makes our server look completely invisible to the attacker).
+
 
 
 
