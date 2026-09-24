@@ -50,9 +50,26 @@ The **Antivirus (AV) may detect some basic threats, but to detect advanced threa
 An EDR also provides organization-wide visibility of any activity. 
 For example, if a suspicious file is detected on one endpoint, the EDR will also check it across all the other endpoints.
 
-
 Antivirus: signature based detection. check the signature(file hash etc.) of the file and compared with the blacklisted signature with it. 
 So, if the malware is a new script then there will not be any signature, hence can't detect the malware.
 
 EDR: Behavior based detection. Instead of checking what is it, these kind of detection solutions prefer to check what will this file do? 
 Hence will monitor each action of this file and report security threats. 
+
+
+## Detection and Response Capabilities
+
+Some of the detection techniques are-
+1. Behavioural Detection: Observes the complete behavior of a file.
+2. Anomaly Detection:  deviates from this baseline behavior.
+3. IOC matching: Except for zero-day attacks, most of the attacks have indicators published in the threat intelligence feeds.
+4. MITRE ATT&CK Mapping: not only marked as malicious or suspicious but also mapped with the MITRE Tactic and Technique (attack stage) that the particular activity was on.
+5. Machine Learning Algorithms: Modern EDRs have machine learning models trained by a large dataset of normal and malicious behaviors. This can detect complex patterns of an attack. Fileless attacks and multi-staged intrusions are often detected through this.
+
+Some of the responses are-
+1. Isolate Host:
+2. Terminate Process: Instead of isolating an endpoint which may be the business core host, a particular process can be terminated by making sure that the termination of the process is not disrupting the endpoint on working.
+3. Quarantine: Quarantine ensures that the file is moved to an isolated location where it can not be executed.
+4. Remote Access: Remotely access the shell of any endpoint. Analysts can gain deeper visibility into the system or take custom actions within the endpoints. The analysts can also run scripts or collect their desired data from the host through remote access.
+5. Artefacts Collection: extract some data from the endpoints for detailed forensic investigation or reporting for legal actions without physically accessing the device. details are- Event logs, Registry Hive, Memory Dump, Specific folder contents.
+   
