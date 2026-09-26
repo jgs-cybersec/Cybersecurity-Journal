@@ -9,3 +9,14 @@
 
 ## Overcoming SOC Challenges using SOAR
 
+With SOAR, SOC analysts do not need to switch between SIEM, EDR, Firewall, and other security tools for their investigations. They **can operate all these tools within a single SOAR interface**. Along with unifying the security tools, it also provides ticketing and case management features to the analysts, through which they can document, track, and resolve their incidents in a structured way.
+
+The Orchestration, Automation, and Response capabilities of SOAR solve the major challenges a SOC team faces. With SOAR, there is no more alert fatigue, most of the processes are automated, and all the different tools are connected for coordination.
+
+**Orchestration**------------->Playbook creation--------------->**Automation using the playbook created**------------->**Automated reponse**
+
+SOAR **Playbooks/Automation Workflows** are predefined workflows that tell the SOAR tool what actions to take during a specific investigation.
+
+SOAR = To automate repitative tasks
+
+SOC Analyst = Essential for taking critical decision and response, creating different type of playbooks.
