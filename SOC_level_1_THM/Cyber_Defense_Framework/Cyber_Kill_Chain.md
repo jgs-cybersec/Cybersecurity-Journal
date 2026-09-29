@@ -17,7 +17,7 @@ Reconnaissance type:-
 - Passive: no direct interaction. Include WHOIS lookups, social media scraping, or reviewing breach data.
 - Active: direct interaction. Activities such as social engineering, port scanning, banner grabbing (a reconnaissance technique used to gather information about computer systems, operating systems, and services running on open network ports. Nmap can be used), or probing for open services.
 
-**Email harvesting** is the process of obtaining email addresses from public, paid, or free services. An attacker can use email-address harvesting for a phishing attack (a type of social-engineering attack used to steal sensitive data, including login credentials and credit card numbers).
+  
 
 Tools used for reconnaissance are 
 - theHarvester: other than gathering emails, this tool is also capable of gathering names, subdomains, IPs, and URLs using multiple public data sources.
@@ -29,4 +29,11 @@ Tools used for reconnaissance are
 - refer to the DarkWeb to purchase the malware.
 - More sophisticated actors or nation-sponsored APT (Advanced Persistent Threat Groups) would write their custom malware to make the malware sample unique and evade detection on the target.
 
+Weaponization Phase Tactics:
+
+- Create an infected Microsoft Office document containing a malicious **macros or VBA (Visual Basic for Applications) scripts**.
+- Create a **malicious payload or a very sophisticated worm**, implant it on USB drives, and then distribute them in public.
+- Set up **Command and Control (C2) infrastructure** for executing the commands on the victim's machine or deliver more payloads.
+- Infect the victim's host with a **backdoor**, which would provide a way to access the computer system, and bypass the security mechanisms.
+- Tailoring **phishing templates or OAuth-consent apps** to look legitimate and dupe the victim.
 
