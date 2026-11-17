@@ -22,8 +22,12 @@ IMAP: Internet Message Access Protocol -----> Sync email in different devices.
 
 <img width="1621" height="706" alt="image" src="https://github.com/user-attachments/assets/ca0327e1-849c-4e38-8c72-5fb472431a12" />
 
+
+
 Which protocol is responsible for sending an email from a client to a mail server? ------>SMTP
 Which service is used to look up the recipient domain’s mail server? ------>DNS
 Bob wants to access his email from multiple devices, including his phone and laptop. Which protocol should he use? ----->IMAP
 
 ## Email Header
+
+Check the source page of the e-mail received to find out more details regarding the originating IP etc. othere than the from, to, mail server, subject info in general.
